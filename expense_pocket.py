@@ -13,7 +13,7 @@ class ExpenseTracker:
       category = self.categories.get(category_number)
       if category:
           category["expenses"] += amount
-          print(f"Added ${amount} to {category['name']} expenses.")
+          print(f"\nAdded ${amount:.2f} to {category['name']} expenses.")
           if category["expenses"] > category["budget"]:
               print("WARNING: You've exceeded the budget for this category!")
               increase_budget = input("Do you want to increase the budget for this category? (yes/no): ")
@@ -26,20 +26,20 @@ class ExpenseTracker:
   def view_expenses(self):
       print("\nMonthly Expenses:")
       for category_number, details in self.categories.items():
-          print(f"{details['name']}: ${details['expenses']}")
+          print(f"{details['name']:<15}: ${details['expenses']:>10.2f}")
 
   def set_budget(self, category_number, budget_amount):
       category = self.categories.get(category_number)
       if category:
           category["budget"] = budget_amount
-          print(f"Set ${budget_amount} as the budget for {category['name']} category.")
+          print(f"\nSet ${budget_amount:.2f} as the budget for {category['name']} category.")
       else:
           print("Invalid category number.")
 
   def view_budget(self):
       print("\nMonthly Budget:")
       for category_number, details in self.categories.items():
-          print(f"{details['name']} Budget: ${details['budget']}")
+          print(f"{details['name']} Budget: ${details['budget']:.2f}")
 
   def remaining_income(self):
       total_expenses = sum(details['expenses'] for details in self.categories.values())
@@ -53,6 +53,7 @@ def print_categories():
 
 
 def main():
+  print("Welcome to Expense Pocket!\n")
   income = float(input("Enter your monthly income: $"))
   tracker = ExpenseTracker(income)
 
@@ -80,9 +81,9 @@ def main():
       elif choice == "4":
           tracker.view_budget()
       elif choice == "5":
-          print(f"\nRemaining Income: ${tracker.remaining_income()}")
+          print(f"\nRemaining Income: ${tracker.remaining_income():.2f}")
       elif choice == "6":
-          print("Exiting the expense tracker.")
+          print("\nThank you for using Expense Tracker and Budgeting Program. Goodbye!")
           break
       else:
           print("Invalid choice. Please try again.")
