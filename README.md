@@ -10,3 +10,14 @@ Expense Pocket provides a simple yet effective way to track monthly expenses and
 3. Warning System: If expenses exceed the set budget for a category, the program issues a warning and offers the option to increase the budget.
 4. Viewing Options: Users can view their expenses, budgets, and remaining income at any time during the session.
 5. User-Friendly Interface: Categories can be selected by their corresponding numbers for ease of use.
+
+## Skills Demonstrated:
+
+- **Problem-Solving**: Designed and implemented features to address complex financial management challenges, such as budget tracking and expense management.
+- **User Interface Design**: Created an intuitive and user-friendly interface with interactive prompts and clear feedback mechanisms.
+- **Financial Management**: Developed a tool to assist users in managing their finances effectively by tracking expenses and setting budgets across different categories.
+
+## Technologies Used:
+
+- Python
+- Git (for version control)
